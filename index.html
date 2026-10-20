@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d3a5f">
+  <title>Moodtape: pick a vibe, press play</title>
+  <meta name="description" content="Tell Moodtape how you feel and it gives you a playlist to match.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="top">
+      <a class="logo" href="./" aria-label="Moodtape home">VibesList</a>
+      <button class="btn btn-outline" id="surprise" type="button">Surprise me</button>
+    </header>
+
+    <section class="hero">
+      <h1 id="headline" aria-live="polite">Today I feel focused.</h1>
+      <nav class="moods" id="moods" aria-label="Pick a mood"></nav>
+    </section>
+
+    <main class="stage">
+
+      <!-- Left: the playlist for the chosen mood -->
+      <section class="playlist" aria-labelledby="plTitle">
+        <div class="pl-head">
+          <div>
+            <h2 id="plTitle">Focus</h2>
+            <p class="tagline" id="plTag"></p>
+          </div>
+          <button class="btn btn-solid" id="playAll" type="button">Play all</button>
+        </div>
+        <ol class="tracks" id="tracks"></ol>
+      </section>
+
+      <!-- Right: now playing -->
+      <aside class="player" aria-label="Now playing">
+        <div class="disc" id="disc" aria-hidden="true">
+          <div class="disc-label"><span id="discEmoji">🎧</span></div>
+        </div>
+
+        <div class="now">
+          <h3 id="nowTitle">Nothing playing yet</h3>
+          <p id="nowArtist">Pick a mood, then pick a song.</p>
+        </div>
+
+        <div class="seek">
+          <input type="range" id="seek" min="0" max="1000" value="0" aria-label="Seek within preview">
+          <div class="times"><span id="tNow">0:00</span><span id="tEnd">0:30</span></div>
+        </div>
+
+        <div class="controls">
+          <button class="icon-btn" id="shuffleBtn" type="button" aria-pressed="false" aria-label="Shuffle"></button>
+          <button class="icon-btn" id="prevBtn" type="button" aria-label="Previous song"></button>
+          <button class="play-btn" id="playBtn" type="button" aria-label="Play"></button>
+          <button class="icon-btn" id="nextBtn" type="button" aria-label="Next song"></button>
+          <button class="icon-btn like" id="likeBtn" type="button" aria-pressed="false" aria-label="Like this song"></button>
+        </div>
+      </aside>
+
+    </main>
+
+    <footer class="foot">
+      <p>Songs play as 30 second previews that only simulate playback. Use the open icon on any song to find the full track on YouTube. Space plays or pauses, the arrow keys skip.</p>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
